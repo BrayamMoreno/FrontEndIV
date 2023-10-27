@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dispositivos</title>
+</head>
+
+<body>
+
+  <h1 class="text-center">Lista de Dispositivos</h1>
+  <div class="row">
+    <div class="offset-9 col-3 mb-3">
+      <a class="btn btn-success" routerLink="/Dispositivos/Agregar">Agregar Dispositivo</a>
+    </div>
+  </div>
+
+  <div *ngIf="errorMensaje" class="alert alert-danger">
+    {{ errorMensaje }}
+  </div>
+
+
+  <div class="row">
+    <div class="offset-12">
+      <div class="card border">
+        <div class="card-header bg-dark">
+          <h3 class="text-white"><strong>Dispositivos Actuales</strong></h3>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="tb1Contactos" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Descripción</th>
+                  <th>Latitud</th>
+                  <th>Longitud</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Dis of Dispositivos">
+                  <td>{{Dis.id}}</td>
+                  <td>{{Dis.descripcion}}</td>
+                  <td>{{Dis.latitud}}</td>
+                  <td>{{Dis.longitud}}</td>
+                  <td><a class="btn btn-danger" (click)="Eliminar(Dis.id)" style="margin-right: 10px;">Eliminar</a>
+                  <a class="btn btn-warning" (click)="(Dis.id)">Editar</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <ng-template #espera>Esperando datos...</ng-template>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
