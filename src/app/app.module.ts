@@ -5,13 +5,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SensoresComponent } from './Data/sensores/sensores.component';
 import { DispositivosComponent } from './Dispositivos/dispositivos/dispositivos.component';
 import { HeaderComponent } from './Navegacion/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { CrearDispositivoComponent } from './Dispositivos/crear-dispositivo/crear-dispositivo.component';
+import { EditarComponent } from './Dispositivos/editar/editar.component';
+import { SensoresComponent } from './Sensores/sensores/sensores.component';
+import { CrearSensorComponent } from './Sensores/crear-sensor/crear-sensor.component';
+import { EditarSensorComponent } from './Sensores/editar-sensor/editar-sensor.component';
+import { InformacionComponent } from './Sensores/informacion/informacion.component';
+import { CrearUsuarioComponent } from './LogIn/crear-usuario/crear-usuario.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +26,12 @@ import { CrearDispositivoComponent } from './Dispositivos/crear-dispositivo/crea
     SensoresComponent,
     IndexComponent,
     HeaderComponent,
-    CrearDispositivoComponent
+    CrearDispositivoComponent,
+    EditarComponent,
+    CrearSensorComponent,
+    EditarSensorComponent,
+    InformacionComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     BrowserModule,

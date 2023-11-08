@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { EditarComponent } from '../editar/editar.component';
+
 
 @Component({
   selector: 'app-dispositivos',
@@ -9,8 +11,11 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 
 export class DispositivosComponent {
+
+  
   Dispositivos: any
   errorMensaje: string = '';
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {

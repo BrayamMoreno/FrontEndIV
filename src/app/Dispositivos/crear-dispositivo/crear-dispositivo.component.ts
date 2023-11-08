@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-crear-dispositivo',
-  templateUrl: './crear-dispositivo.component.html',    
+  templateUrl: './crear-dispositivo.component.html',
   styleUrls: ['./crear-dispositivo.component.css']
 })
 export class CrearDispositivoComponent {
@@ -13,8 +13,6 @@ export class CrearDispositivoComponent {
     longitud: '',
     latitud: ''
   }
-
-  responseData: any;
 
   constructor(private http: HttpClient) { }
 
@@ -25,7 +23,7 @@ export class CrearDispositivoComponent {
       descripcion: this.Dispositivo.descripcion,
       longitud: this.Dispositivo.longitud,
       latitud: this.Dispositivo.latitud
-    };  
+    };
 
     console.log(dispositivoData)
 
@@ -39,8 +37,9 @@ export class CrearDispositivoComponent {
         }
       );
 
+    this.Dispositivo.descripcion = '';
+    this.Dispositivo.latitud = '';
+    this.Dispositivo.longitud = '';
+
   }
-
- 
-
 }

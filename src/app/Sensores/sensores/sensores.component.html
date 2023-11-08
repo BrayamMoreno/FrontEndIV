@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dispositivos</title>
+  <title>Sensores</title>
 </head>
 
 <body>
 
-  <h1 class="text-center">Lista de Dispositivos</h1>
+  <h1 class="text-center">Lista de Sensores</h1>
   <div class="row">
     <div class="offset-9 col-3 mb-3">
-      <a class="btn btn-success" routerLink="/Dispositivos/Agregar">Agregar Dispositivo</a>
+      <a class="btn btn-success" routerLink="/Sensores/Agregar">Agregar Sensor</a>
     </div>
   </div>
 
@@ -25,7 +25,7 @@
     <div class="offset-12">
       <div class="card border">
         <div class="card-header bg-dark">
-          <h3 class="text-white"><strong>Dispositivos Actuales</strong></h3>
+          <h3 class="text-white"><strong>Sensores Actuales</strong></h3>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -33,20 +33,20 @@
               <thead>
                 <tr>
                   <th>Id</th>
+                  <th>Referencia</th>
                   <th>Descripción</th>
-                  <th>Latitud</th>
-                  <th>Longitud</th>
+                  <th>Dispositivo Id</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let Dis of Dispositivos">
+                <tr *ngFor="let Dis of Sensores">
                   <td>{{Dis.id}}</td>
+                  <td>{{Dis.referencia}}</td>
                   <td>{{Dis.descripcion}}</td>
-                  <td>{{Dis.latitud}}</td>
-                  <td>{{Dis.longitud}}</td>
+                  <td><a [routerLink]="['/Dispositivo/Info', Dis.dispositivoId]">{{Dis.dispositivoId}}</a></td>
                   <td><a class="btn btn-danger" (click)="Eliminar(Dis.id)" style="margin-right: 10px;">Eliminar</a>
-                    <a class="btn btn-warning" [routerLink]="['/Dispositivos/Editar', Dis.id]">Editar</a>
+                    <a class="btn btn-warning" [routerLink]="['/Sensores/Editar', Dis.id]">Editar</a>
                 </tr>
               </tbody>
             </table>
