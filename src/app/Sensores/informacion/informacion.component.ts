@@ -25,7 +25,7 @@ export class InformacionComponent {
   ngOnInit() {
     this.route.params.subscribe(params => {
       const id = params['id'];
-      const url = `https://localhost:7293/Dispositivos/GetDispositivo?Id=${id}`;
+      const url = `http://74.235.212.31:5000/Dispositivos/GetDispositivo?Id=${id}`;
   
     this.http.get(url).subscribe(
       (resultado) => {

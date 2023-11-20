@@ -28,7 +28,7 @@ export class EditarSensorComponent {
       // Utiliza 'id' para cargar los datos que deseas editar
       console.log(id)
 
-      const url = `https://localhost:7293/Sensores/GetSensor?Id=${id}`;
+      const url = `http://74.235.212.31:5000/Sensores/GetSensor?Id=${id}`;
 
       this.http.get(url).subscribe(
         (resultado) => {
@@ -42,7 +42,7 @@ export class EditarSensorComponent {
 
     });
 
-    this.http.get("https://localhost:7293/Dispositivos/GetDispositivos")
+    this.http.get("http://74.235.212.31:5000/Dispositivos/GetDispositivos")
       .subscribe(
         resultado => {
           this.Dispositivos = resultado;
@@ -61,7 +61,7 @@ export class EditarSensorComponent {
 
     console.log(SensorData);
 
-    const url = `https://localhost:7293/Sensores/PutSensor?id=${this.Sensor.id}`;
+    const url = `http://74.235.212.31:5000/Sensores/PutSensor?id=${this.Sensor.id}`;
 
     this.http.put(url, SensorData).subscribe(response => {
       console.log('Dispositivo actualizado', response);

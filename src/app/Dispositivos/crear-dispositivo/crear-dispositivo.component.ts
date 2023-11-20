@@ -14,7 +14,7 @@ export class CrearDispositivoComponent {
     latitud: ''
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { } 
 
 
   onSubmit() {
@@ -27,7 +27,7 @@ export class CrearDispositivoComponent {
 
     console.log(dispositivoData)
 
-    this.http.post('https://localhost:7293/Dispositivos/PostDispositivo', dispositivoData)
+    this.http.post('http://74.235.212.31:5000/Dispositivos/PostDispositivo', dispositivoData)
       .subscribe(
         (response) => {
           console.log('Solicitud exitosa', response);

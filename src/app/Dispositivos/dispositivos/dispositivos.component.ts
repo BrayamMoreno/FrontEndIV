@@ -19,7 +19,7 @@ export class DispositivosComponent {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get("https://localhost:7293/Dispositivos/GetDispositivos")
+    this.http.get("http://74.235.212.31:5000/Dispositivos/GetDispositivos")
       .subscribe(
         resultado => {
           this.Dispositivos = resultado;
@@ -29,11 +29,11 @@ export class DispositivosComponent {
   
   Eliminar(id: number) {
     
-    const url = `https://localhost:7293/Dispositivos/DeleteDispositivo?Id=${id}`;
+    const url = `http://74.235.212.31:5000/Dispositivos/DeleteDispositivo?Id=${id}`;
 
     this.http.delete(url).subscribe(
       (response) => {
-        this.http.get("https://localhost:7293/Dispositivos/GetDispositivos").subscribe(
+        this.http.get("http://74.235.212.31:5000/Dispositivos/GetDispositivos").subscribe(
           (resultado) => {
             this.Dispositivos = resultado;
           }

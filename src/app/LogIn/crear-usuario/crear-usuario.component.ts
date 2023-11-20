@@ -45,7 +45,7 @@ export class CrearUsuarioComponent {
     console.log(PersonaData)
 
 
-    this.http.post('https://localhost:7293/Usuarios/PostUsuario', PersonaData)
+    this.http.post('http://74.235.212.31:5000/Usuarios/PostUsuario', PersonaData)
       .subscribe(
         (response) => {
           console.log('Solicitud exitosa', response);
@@ -59,7 +59,7 @@ export class CrearUsuarioComponent {
   }
 
   ngOnInit(){
-    this.http.get("https://localhost:7293/Usuarios/GetDepartamentos")
+    this.http.get("http://74.235.212.31:5000/Usuarios/GetDepartamentos")
       .subscribe(
         resultado => {
           this.Departamentos = resultado;
@@ -69,7 +69,7 @@ export class CrearUsuarioComponent {
   
 
   MunId() {
-    const url = `https://localhost:7293/Usuarios/GetMunicipios?Id=${this.aux.id}`;
+    const url = `http://74.235.212.31:5000/Usuarios/GetMunicipios?Id=${this.aux.id}`;
     this.http.get(url)
       .subscribe(
         resultado => {

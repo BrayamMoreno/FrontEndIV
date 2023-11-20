@@ -28,7 +28,7 @@ export class EditarComponent {
       // Utiliza 'id' para cargar los datos que deseas editar
       console.log(id)
 
-      const url = `https://localhost:7293/Dispositivos/GetDispositivo?Id=${id}`;
+      const url = `http://74.235.212.31:5000/Dispositivos/GetDispositivo?Id=${id}`;
   
     this.http.get(url).subscribe(
       (resultado) => {
@@ -55,7 +55,7 @@ export class EditarComponent {
 
     console.log(dispositivoData)
 
-    const url = `https://localhost:7293/Dispositivos/PutDispositivo?id=${this.Dispositivo.id}`;
+    const url = `http://74.235.212.31:5000/Dispositivos/PutDispositivo?id=${this.Dispositivo.id}`;
 
     // Realiza la solicitud PUT utilizando HttpClient
     this.http.put(url, dispositivoData).subscribe(response => {

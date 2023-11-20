@@ -20,7 +20,7 @@ export class CrearSensorComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get("https://localhost:7293/Dispositivos/GetDispositivos")
+    this.http.get("http://74.235.212.31:5000/Dispositivos/GetDispositivos")
       .subscribe(
         resultado => {
           this.Dispositivos = resultado;
@@ -37,7 +37,7 @@ export class CrearSensorComponent {
 
     console.log(sensorData)
 
-    this.http.post('https://localhost:7293/Sensores/PostSensor', sensorData)
+    this.http.post('http://74.235.212.31:5000/Sensores/PostSensor', sensorData)
     .subscribe(
       (response) => {
         console.log('Solicitud exitosa', response);

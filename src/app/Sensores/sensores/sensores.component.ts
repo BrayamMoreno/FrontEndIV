@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class SensoresComponent {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get("https://localhost:7293/Sensores/GetSensores")
+    this.http.get("http://74.235.212.31:5000/Sensores/GetSensores")
       .subscribe(
         resultado => {
           this.Sensores = resultado;
@@ -24,11 +24,11 @@ export class SensoresComponent {
   }
 
   Eliminar(id: number){
-    const url = `https://localhost:7293/Sensores/DeleteSensor?Id=${id}`;
+    const url = `http://74.235.212.31:5000/Sensores/DeleteSensor?Id=${id}`;
 
     this.http.delete(url).subscribe(
       (response) => {
-        this.http.get("https://localhost:7293/Sensores/GetSensores").subscribe(
+        this.http.get("http://74.235.212.31:5000/Sensores/GetSensores").subscribe(
           (resultado) => {
             this.Sensores = resultado;
           }
