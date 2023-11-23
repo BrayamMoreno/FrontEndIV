@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { interval, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -14,6 +13,14 @@ export class IndexComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+
+    this.http.get("http://74.235.212.31:5000/Datos/lecturas-completas")
+      .subscribe(
+        resultado => {
+          this.Lecturas = resultado;
+        }
+      )
+
     setInterval(() => {
       this.http.get("http://74.235.212.31:5000/Datos/lecturas-completas")
       .subscribe(
