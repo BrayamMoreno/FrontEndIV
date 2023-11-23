@@ -18,8 +18,7 @@ const routes: Routes = [
   { path: 'Sensores', component: SensoresComponent},
   { path: 'Sensores/Agregar', component: CrearSensorComponent},
   { path: 'Sensores/Editar/:id', component: EditarSensorComponent},
-  { path: 'Dispositivo/Info/:id', component: InformacionComponent},
-  { path: 'LogIn/Agregar', component: CrearUsuarioComponent}
+  { path: 'Dispositivo/Info/:id', component: InformacionComponent}
 ];
 
 @NgModule({
